@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TestApp1</title>
+  
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+      <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+      <%= javascript_importmap_tags %>
+      <nav class="navbar navbar-dark bg-primary">
+  <!-- Your HTML content for the navbar goes here -->
+</nav>
+
+  </head>
+
+  <body>
+       <%= render "layouts/nevgation" %>
+    <%= yield %>
+  </body>
+</html>
