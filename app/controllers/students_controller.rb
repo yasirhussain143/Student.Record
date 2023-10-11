@@ -1,15 +1,15 @@
 class StudentsController < ApplicationController
-  
-  
+
+
   before_action :set_student, only: [ :show,:edit, :update, :destroy]
-  
-  
-  
+
+
+
   def index
     @student = Student.all
   end
- 
- 
+
+
   def new
     @student = Student.new
  end
@@ -26,29 +26,29 @@ class StudentsController < ApplicationController
     flash[:notice] = "Action  not performed successfully"
   end
  end
-   
+
  def show
-    
+
 
   end
 
   def edit
-   
+
   end
- 
- 
+
+
    def update
-  
+
     if @student.update(student_params)
       redirect_to students_path(@student)
     else
       render :edit
     end
   end
-      
-  
+
+
    #def destroy
-        
+
     #    @student.destroy
      #   redirect_to students_path
       #end
@@ -60,11 +60,11 @@ class StudentsController < ApplicationController
           redirect_to students_path, alert: 'Failed to delete student.'
         end
       end
-       
-      
+
+
       def set_student
         @student = Student.find(params[:id])
-    
+
       end
 
 
@@ -73,7 +73,7 @@ class StudentsController < ApplicationController
 
 
 
- private 
+ private
 
  def student_params
   params.require(:student).permit(:student_id,:student_name,:email)
