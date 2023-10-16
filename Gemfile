@@ -50,6 +50,8 @@ gem 'webpacker', '~> 5.4'
 
 gem 'coffee-script-source', '~> 1.11'
 
+gem "devise" 
+
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
