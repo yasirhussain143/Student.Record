@@ -1,7 +1,6 @@
- <%= form_with model: @student do |form|      %>
+<% if @obj.present? && @obj.errors.any? %>
+  <% @obj.errors.full_messages.each do |message| %>
+    <p><%= message %></p>
+  <% end %>
+<% end %>
 
-          <% if @student.errors.any? %>
-            <% @student.errors.full_messages.each do |message| %>
-            <p><%= message %></p>
-          <%end%>
-          <%end%>
