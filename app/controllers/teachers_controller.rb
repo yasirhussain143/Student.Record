@@ -13,6 +13,21 @@ class TeachersController < ApplicationController
         render 'new'
       end
     end
+          def edit
+          @teacher = Teacher.find(params[:id])
+          end
+
+          def update
+            @teacher = Teacher.find(params[:id])
+            if @teacher.update(teacher_params)
+              flash[:notice]= "Teacher updated successfully"#{@teacher.name}
+              redirect_to students_path
+            else
+              render 'edit'
+            end
+
+
+          end
 
         private
         def  teacher_params
