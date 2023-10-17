@@ -1,9 +1,21 @@
 class TeachersController < ApplicationController
 
-      def new
 
-        @teacher = Teacher.new
+
+
+        def show
+          @teacher = Teacher.find(params[:id])
+          @students = @teacher.students
+          end
+
+        def new
+
+              @teacher = Teacher.new
+              end
+        def index
+       @teachers = Teacher.all
         end
+
     def create
       @teacher = Teacher.new(teacher_params)
          if @teacher.save

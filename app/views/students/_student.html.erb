@@ -1,0 +1,37 @@
+<div id ="page-content">
+    <div class ="comtaine">
+   <% @student.each do |student| %>
+   <div class ="row justify-content-md-center">
+   <div class = "col-8 mt-4">
+   
+        <div class="card text-center shadow p-3 mb-5 bg-white rounded">
+      <div class="card-header font-italic">
+      by <%= student.teacher.teacher_id if student.teacher_id %>
+      </div>
+      <div class="card-body">
+      <h5 class="card-title"><%=link_to student.student_id,students_path(student), class:"text-success" %></h5>
+      <p class="card-text"><%= student.student_name%></p>
+      <p class="card-text"><%= student.email%></p>
+      
+            <%= link_to "Go View", student, class: "btn btn-outline-success" %>
+            <%= link_to "Go Edit", edit_student_path(student), class: "btn btn-outline-info" %>
+            <%= link_to "Delete", student, class: "btn btn-outline-danger",data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+
+        </div>
+        <div class="card-footer text-muted">
+            <small>Created <%= time_ago_in_words(student.created_at) %> ago,
+            edited <%= time_ago_in_words(student.updated_at) %> ago </small>
+
+        
+        
+
+      </div>
+      </div>
+      </div>
+</div>
+<%end%>
+</div>
+</div>
+<h2><%= link_to 'New' , new_student_path %><h2>
+
+
