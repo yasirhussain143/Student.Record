@@ -3,9 +3,10 @@
            <div class = "container">
 
                      <%= render "shared/errors" , obj: @teacher %>
-       <div class="row justify-content-center">
-        <div class="col-5">
-            <%= form_with(model: @taecher, class: "shadow p-3 mb-3 bg-info rounded", local: true) do |f| %>
+            <div class="row justify-content-center">
+              <div class="col-5">
+          <%= form_for @teacher, html: { class: "shadow p-3 mb-3 bg-info rounded" } do |f| %>
+          
            <div class="form-group row">
            <%= f.label :name, class: "col-2 col-form-label text-light" %>
            <div class="col-5">

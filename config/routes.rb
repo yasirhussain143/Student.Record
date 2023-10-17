@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
-  devise_for :admin_users
+      devise_for :admin_users
 
-  root 'welcome#index'
+      root 'welcome#index'
 
+      resources :students
 
-  resources  :students
-
-  get 'signup' , to: 'teachers#new'
-  resources :teachers, except: [:new]
+      get 'signup', to: 'teachers#new'
+      post 'signup', to: 'teachers#create'
+      resources :teachers, except: [:new]
 
 
 
