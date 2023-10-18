@@ -3,7 +3,7 @@
 
 .navbar
  {
-    background-color: black !important;
+    background-color: grey !important;
     
 }
 .nav-link{
@@ -32,11 +32,29 @@ margin-top: 25px;
     
   
   }
+  .custom-background {
+    background-color: lightgray;
+  }
+  
   html,
   body {
     height: 100%;
 
   }
+  .profile-image {
+    max-width: 200px;
+    max-height: 200px;
+  }
+  .center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+
+
+
   #page-content {
     flex: 1 0 auto;
     background-color: lightslategray;

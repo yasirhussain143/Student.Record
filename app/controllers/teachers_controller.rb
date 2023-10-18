@@ -33,7 +33,7 @@ class TeachersController < ApplicationController
             @teacher = Teacher.find(params[:id])
             if @teacher.update(teacher_params)
               flash[:notice]= "Teacher updated successfully"#{@teacher.name}
-              redirect_to students_path
+              redirect_to @teacher
             else
               render 'edit'
             end
@@ -43,7 +43,7 @@ class TeachersController < ApplicationController
 
         private
         def  teacher_params
-          params.require(:teacher).permit(:name, :email)
+          params.require(:teacher).permit(:name, :email , :profile_picture)
 
         end
       end

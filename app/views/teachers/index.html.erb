@@ -1,6 +1,6 @@
-<h1 class="text-center mt-4"> Teacher's Blog </h1>
+<h1 class="text-center mt-4 "> Teacher's Blog </h1>
 
-<div class="container">
+<div class="custom-background">
   <% @teachers.each do |teacher| %>
     <div class="row justify-content-md-center">
       <div class="col-8 mt-4">
@@ -9,9 +9,12 @@
             <%= link_to teacher.name, teacher %>
           </div>
           <div class="card-body">
+            
             <h5 class="card-title">
-              <%= link_to gravatar_for(teacher, size: 200), teacher %>
+           <%= image_tag teacher.profile_picture,  width: "100px", height: "100px" if teacher.profile_picture.attached? %>
+
             </h5>
+
             <p class="card-text"><%= pluralize(teacher.students.count, "student") %></p>
             <%= link_to "View profile", teacher, class: "btn btn-outline-success" %>
             <%= link_to "Edit profile", edit_teacher_path(teacher), class: "btn btn-outline-info" %>
