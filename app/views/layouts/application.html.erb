@@ -5,19 +5,28 @@
   
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-      <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-      <%= javascript_importmap_tags %>
+          <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload' %>
+          
+           <%= javascript_importmap_tags %>
       <nav class="navbar navbar-dark bg-primary">
-  <!-- Your HTML content for the navbar goes here -->
+            <!-- Your HTML content for the navbar goes here -->
+            <% if flash[:errors].present? %>
+            <div class="alert alert-success">
+              <%= flash[:errors] %>
+            </div>
+      <% end %>
+
 </nav>
 
   </head>
 
   <body>
        <%= render "layouts/nevgation" %>
-       <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+       
+     
+       <p class="notice"><%=flash[:notice]%></p>
+       <p class="alert"><%= flash[:alert] %></p>
+   
 
     <%= yield %>
   </body>

@@ -4,6 +4,7 @@ class Teacher < ApplicationRecord
  validates :name, presence:true, length:{minimum: 3, maximum: 12}
  validates :email, presence:true, length:{ maximum: 90}
 
+
    validate :validate_profile_picture_content_type
 
   def validate_profile_picture_content_type

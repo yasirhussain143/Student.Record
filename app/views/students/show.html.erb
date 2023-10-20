@@ -14,9 +14,14 @@
                          <%= @student.teacher.name %>
                         <% end %>
                 </div>
-           <div class="card-body">
+                <div class="card-body">
       
-      
+                            <% if @student.document.attached? %>
+                    <%= link_to "Download Document", rails_blob_path(@student.document, disposition: "attachment") %>
+                    <% else %>
+                    <p>No document uploaded.</p>
+                    <% end %>
+
 
       
             <p class="card-text"><%= @student.student_name%></p>
@@ -40,6 +45,10 @@
         </div>
 
         </div>
+
+
+
+
         <div class="form-group row justify-content-center col-2 text-light">
         
         <%= link_to 'Back', students_path  ,class:"btn btn-outline-light  text-info"  %>

@@ -1,22 +1,13 @@
-<% if @obj.present? && @obj.errors.any? %>
-  <% @obj.errors.full_messages.each do |message| %>
-    <p><%= message %></p>
+ <div id ="page-content">
+   <% if @obj.present? && @obj.errors.any? %>
+   <h2 class= "alert-heading">the error message</h2>
+      <div class="alert alert-danger" role="alert">
 
-      <% if @obj.errors[field].any? %>
-        <div class="alert alert-danger">
-          <ul>
-            <% @obj.errors[field].each do |message| %>
-              <li><%= message %></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
-
-
-
-
-
-
-  <% end %>
-<% end %>
-
+        <ul>
+          <% @obj.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+</div>
